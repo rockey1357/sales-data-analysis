@@ -2,9 +2,8 @@
 
 ## 1. Project Overview
 
-The Sales Data Analysis System is a web-based application developed using Python, Flask, MySQL, Pandas, NumPy and Matplotlib.
-
-The system helps users store, manage and analyze sales records. It provides a colorful dashboard that displays important sales information and charts.
+A web-based application built with Python, Flask, MySQL, Pandas, NumPy and Matplotlib.
+It helps users store, manage and analyze sales records, and shows the results on a dashboard with charts.
 
 ## 2. Technologies Used
 
@@ -14,180 +13,86 @@ The system helps users store, manage and analyze sales records. It provides a co
 * Pandas
 * NumPy
 * Matplotlib
-* HTML
-* CSS
+* HTML and CSS
 
 ## 3. Main Features
 
-* View sales records
-* Add new sales
-* Edit existing sales
-* Delete sales
-* Search sales
-* Filter sales by category
-* Filter sales by region
-* Calculate total sales
-* Calculate total quantity
-* Calculate average sales
-* Find best-selling product
-* Find best-performing region
-* Display sales charts
-* Input validation
-* Error handling
+* User registration and login
+* Add, view, edit and delete sales records (CRUD)
+* Search by product or customer name
+* Filter by category and region
+* Import sales from a CSV file (with validation and duplicate check)
+* Dashboard with total sales, total quantity, average sales, best product and best region
+* Charts: monthly, product, region and category sales
+* Input validation and error handling
 
 ## 4. Project Structure
 
 ```text
 sales_data_analysis/
-│
-├── app.py
-├── charts.py
-├── README.md
-│
-├── templates/
-│   ├── dashboard.html
-│   ├── sales.html
-│   ├── add_sale.html
-│   └── edit_sale.html
-│
-└── static/
-    ├── monthly_sales.png
-    ├── product_sales.png
-    └── region_sales.png
+├── app.py              Flask application (routes, login, CRUD, CSV import)
+├── analysis.py         Console analysis with Pandas and NumPy
+├── charts.py           Creates the chart images in static/
+├── database.sql        Database and table setup
+├── requirements.txt    Python packages
+├── test_sales.csv      Sample CSV (valid data)
+├── test_invalid.csv    Sample CSV (invalid data for testing validation)
+├── templates/          HTML pages (portal, login, register, dashboard, sales, add, edit, import)
+└── static/             Chart images
 ```
 
 ## 5. Database
 
-Database Name:
+Database: `sales_analysis`
+
+Tables:
+
+* `users` (user_id, name, username, password)
+* `sales` (sale_id, sale_date, product_name, category, quantity, price, customer_name, region)
+
+## 6. How to Run
+
+1. Install MySQL Server. Open the MySQL Command Line Client, log in, and create the database and tables:
 
 ```text
-sales_analysis
+source C:/path/to/sales_data_analysis/database.sql;
 ```
 
-Table Name:
-
-```text
-sales
-```
-
-The sales table contains:
-
-* Sale ID
-* Sale Date
-* Product Name
-* Category
-* Quantity
-* Price
-* Customer Name
-* Region
-
-## 6. How to Run the Project
-
-Open PowerShell in the project folder.
-
-Activate the virtual environment:
+2. Create a virtual environment and install packages (PowerShell):
 
 ```powershell
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
 ```
 
-Run the Flask application:
+3. Set the MySQL password (it is not stored in the code):
+
+```powershell
+$env:DB_PASSWORD = "your_mysql_password"
+```
+
+4. Start the app:
 
 ```powershell
 python app.py
 ```
 
-Open the following address in a browser:
+5. Open `http://127.0.0.1:5000/`, register a user and log in.
 
-```text
-http://127.0.0.1:5000/
-```
-
-## 7. Dashboard
-
-The dashboard displays:
-
-* Total Sales
-* Total Quantity
-* Average Sales
-* Best Product
-* Best Region
-* Monthly Sales Chart
-* Product Sales Chart
-* Region Sales Chart
-
-## 8. CRUD Operations
-
-The system supports CRUD operations:
-
-### Create
-
-Users can add new sales records.
-
-### Read
-
-Users can view all sales records.
-
-### Update
-
-Users can edit existing sales records.
-
-### Delete
-
-Users can delete sales records.
-
-## 9. Search and Filtering
-
-Users can search sales using:
-
-* Product name
-* Customer name
-
-Users can also filter records using:
-
-* Category
-* Region
-
-## 10. Validation
+## 7. Validation
 
 The system checks that:
 
 * Required fields are filled.
-* Quantity is greater than zero.
-* Price is greater than zero.
-* Quantity contains a valid number.
-* Price contains a valid number.
+* Quantity and price are valid numbers greater than zero.
+* Duplicate sales are skipped during CSV import.
+* Invalid CSV rows are rejected.
 
-## 11. Future Scope
+## 8. Future Scope
 
-The project can be improved in the future by adding:
-
-* User login and authentication
+* Password hashing
 * Export sales data to Excel or PDF
-* More advanced charts
-* Monthly and yearly reports
-* Profit analysis
-* Customer analysis
-* Cloud database support
+* More advanced charts and reports
+* Profit and customer analysis
 * Online deployment
-
-## 12. Conclusion
-
-The Sales Data Analysis System provides a simple and user-friendly way to manage and analyze sales data.
-
-The combination of Flask, MySQL, Pandas, NumPy and Matplotlib makes it possible to store data, perform analysis and display useful information through an interactive web dashboard.
-
-## 13. Database Password Setup
-
-The MySQL password is not stored in the code. Set it before running:
-
-```powershell
-$env:DB_PASSWORD = "your_mysql_password"
-python app.py
-```
-
-Install the required packages with:
-
-```powershell
-pip install -r requirements.txt
-```
