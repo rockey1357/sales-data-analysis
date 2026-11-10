@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Sales Data Analysis System</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+            min-height: 100vh;
+            color: #1f2937;
+        }
+
+        .navbar {
+            height: 75px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .login-btn {
+            text-decoration: none;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: white;
+            color: #4f46e5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 30px 30px;
+        }
+
+        .icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin: 10px 0;
+            color: #312e81;
+        }
+
+        .subtitle {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .features {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .feature {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+            border: 1px solid #e5e7eb;
+        }
+
+        .feature:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(79, 70, 229, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            margin: 8px 0;
+            color: #312e81;
+            font-size: 20px;
+        }
+
+        .feature p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .info-section {
+            max-width: 1000px;
+            margin: 35px auto 50px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+            text-align: center;
+        }
+
+        .info-section h2 {
+            color: #312e81;
+            margin-top: 0;
+        }
+
+        .info-section p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            padding: 15px 22px;
+            background: #f5f3ff;
+            border-radius: 12px;
+            color: #4338ca;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            📊 Sales Data Analysis
+        </div>
+
+        <a href="/login" class="login-btn">
+            🔐 LOGIN
+        </a>
+
+    </div>
+
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+        <div class="icon">
+            📊
+        </div>
+
+        <h1>
+            Sales Data Analysis System
+        </h1>
+
+        <p class="subtitle">
+            Analyze sales records, track revenue, identify top-performing
+            products, and understand sales trends using a simple and powerful
+            data analysis system.
+        </p>
+
+
+        <!-- FEATURES -->
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Revenue Analysis
+                </h3>
+
+                <p>
+                    Calculate total sales revenue and understand the overall
+                    financial performance of the business.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📦
+                </div>
+
+                <h3>
+                    Product Performance
+                </h3>
+
+                <p>
+                    Identify top-selling products and compare product-wise
+                    sales performance.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Sales Trends
+                </h3>
+
+                <p>
+                    Analyze monthly sales and understand how sales change
+                    over different periods.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Sales Records
+                </h3>
+
+                <p>
+                    Add, view, edit and delete sales records through an
+                    organized sales management system.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📤
+                </div>
+
+                <h3>
+                    CSV Import
+                </h3>
+
+                <p>
+                    Import structured sales data from CSV files with
+                    validation and duplicate checking.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Secure Login
+                </h3>
+
+                <p>
+                    Access the dashboard through a login system to keep
+                    project data protected.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- HOW IT WORKS -->
+
+    <div class="info-section">
+
+        <h2>
+            🚀 How the System Works
+        </h2>
+
+        <p>
+            The system stores sales information in a database and processes
+            the data to generate useful business insights such as revenue,
+            quantity sold, top products, regions and monthly trends.
+        </p>
+
+
+        <div class="steps">
+
+            <div class="step">
+                1️⃣ Login
+            </div>
+
+            <div class="step">
+                2️⃣ Manage Sales
+            </div>
+
+            <div class="step">
+                3️⃣ Analyze Data
+            </div>
+
+            <div class="step">
+                4️⃣ View Insights
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        Sales Data Analysis System • College Project
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Sale</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #5a3ea6;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            margin-bottom: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.02);
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #5a3ea6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✏️ Edit Sale</h1>
+
+    <form method="POST">
+
+        <label>Sale Date</label>
+        <input type="date" name="sale_date"
+               value="{{ sale.sale_date }}" required>
+
+        <label>Product Name</label>
+        <input type="text" name="product_name"
+               value="{{ sale.product_name }}" required>
+
+        <label>Category</label>
+        <input type="text" name="category"
+               value="{{ sale.category }}" required>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity"
+               value="{{ sale.quantity }}" required>
+
+        <label>Price</label>
+        <input type="number" name="price"
+               value="{{ sale.price }}" required>
+
+        <label>Customer Name</label>
+        <input type="text" name="customer_name"
+               value="{{ sale.customer_name }}" required>
+
+        <label>Region</label>
+        <input type="text" name="region"
+               value="{{ sale.region }}" required>
+
+        <button type="submit">💾 Update Sale</button>
+
+    </form>
+
+    <a class="back" href="/sales">⬅ Back to Sales</a>
+
+</div>
+
+</body>
+</html>

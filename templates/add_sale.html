@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Add New Sale</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #111827, #312e81, #6d28d9);
+            color: white;
+            padding: 30px 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            color: #ddd6fe;
+        }
+
+        .back-btn {
+            background: white;
+            color: #4c1d95;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* CONTAINER */
+
+        .container {
+            width: 92%;
+            max-width: 850px;
+            margin: 35px auto;
+        }
+
+
+        /* FORM CARD */
+
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.09);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-title h2 {
+            margin: 0;
+            font-size: 26px;
+            color: #111827;
+        }
+
+        .form-title p {
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+
+        /* FORM GRID */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #334155;
+            font-size: 14px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dbe1ea;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            background: #fafbff;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124,58,237,0.10);
+            background: white;
+        }
+
+
+        /* BUTTON */
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 28px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(124,58,237,0.25);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 22px rgba(124,58,237,0.32);
+        }
+
+
+        /* REQUIRED NOTE */
+
+        .required-note {
+            margin-top: 20px;
+            color: #64748b;
+            font-size: 13px;
+            text-align: center;
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+            margin-top: 40px;
+            padding: 22px;
+            background: #111827;
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 700px) {
+
+            .header {
+                flex-direction: column;
+                gap: 18px;
+                text-align: center;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+
+            .form-card {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div>
+
+            <h1>➕ Add New Sale</h1>
+
+            <p>Enter a new sales transaction</p>
+
+        </div>
+
+        <a href="/sales" class="back-btn">
+            📋 Sales Records
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- FORM -->
+
+        <div class="form-card">
+
+
+            <div class="form-title">
+
+                <h2>📝 Sale Information</h2>
+
+                <p>Enter the details of the new sale below</p>
+
+            </div>
+
+
+            <form method="POST">
+
+
+                <div class="form-grid">
+
+
+                    <!-- DATE -->
+
+                    <div class="form-group">
+
+                        <label>📅 Sale Date</label>
+
+                        <input
+                            type="date"
+                            name="sale_date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PRODUCT -->
+
+                    <div class="form-group">
+
+                        <label>🛍️ Product Name</label>
+
+                        <input
+                            type="text"
+                            name="product_name"
+                            placeholder="Enter product name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label>📂 Category</label>
+
+                        <select name="category" required>
+
+                            <option value="">Select Category</option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Furniture">
+                                Furniture
+                            </option>
+
+                            <option value="Vehicles">
+                                Vehicles
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- QUANTITY -->
+
+                    <div class="form-group">
+
+                        <label>📦 Quantity</label>
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            min="1"
+                            placeholder="Enter quantity"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PRICE -->
+
+                    <div class="form-group">
+
+                        <label>💰 Price</label>
+
+                        <input
+                            type="number"
+                            name="price"
+                            min="1"
+                            step="0.01"
+                            placeholder="Enter price"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CUSTOMER -->
+
+                    <div class="form-group">
+
+                        <label>👤 Customer Name</label>
+
+                        <input
+                            type="text"
+                            name="customer_name"
+                            placeholder="Enter customer name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- REGION -->
+
+                    <div class="form-group full">
+
+                        <label>🌎 Region</label>
+
+                        <select name="region" required>
+
+                            <option value="">Select Region</option>
+
+                            <option value="South">
+                                South
+                            </option>
+
+                            <option value="North">
+                                North
+                            </option>
+
+                            <option value="East">
+                                East
+                            </option>
+
+                            <option value="West">
+                                West
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    💾 Save Sale
+                </button>
+
+
+            </form>
+
+
+            <div class="required-note">
+
+                All fields are required
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        Sales Data Analysis System
+        <br><br>
+
+        Python • Flask • MySQL • Pandas • NumPy • Matplotlib
+
+    </div>
+
+
+</body>
+
+</html>

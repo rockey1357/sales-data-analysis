@@ -1,0 +1,4 @@
+sale_date,product_name,category,quantity,price,customer_name,region
+2026-10-15,Car,Vehicles,1,850000,Test Customer,South
+2026-10-16,Laptop,Electronics,2,55000,Test Customer 2,North
+2026-10-17,Chair,Furniture,3,5000,Test Customer 3,East
